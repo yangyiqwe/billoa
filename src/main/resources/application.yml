@@ -1,0 +1,37 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    username: root
+    password: root
+    #url: jdbc:mysql:///white_jotter?characterEncoding=UTF-8  #本地
+    url: jdbc:mysql://60.205.225.90:3306/white_jotter?characterEncoding=UTF-8  #服务
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+#??
+#logging:
+#    level:
+#      com.example.billoa.sys.mapper: debug
+
+#mybatis-plus??
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+
+    #xml路径
+    #mapper-locations: classpath:mapper.sys/*.xml
+    #实体类路径
+    #type-aliases-package: com.example.billoa.sys.entity
+
+
+
+
+
+

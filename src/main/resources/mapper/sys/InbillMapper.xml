@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.billoa.sys.mapper.InbillMapper">
+
+    <select id="getCheckOut" resultType="map">
+        SELECT inbill_date,inbill_connection,inbill_inrent,DATE_FORMAT(inbill_date,'%Y') year,inbill_cotent from inbill GROUP BY
+           inbill_inrent,inbill_connection,inbill_date,inbill_cotent HAVING inbill_inrent!=''
+    </select>
+
+</mapper>
